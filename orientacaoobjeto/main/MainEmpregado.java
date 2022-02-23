@@ -11,7 +11,10 @@ public class MainEmpregado {
         empregado.setCodigoSetor(1);
         empregado.setImposto(5.5f);
         empregado.setSalarioBase(5100.50f);
-       // System.out.printf("%.2f" , empregado.calculaSalario(empregado.getSalarioBase(), empregado.getImposto()));
-        System.out.println(empregado.toString());
+       // System.out.println(empregado);
+
+        Empregado novoEmpregado = new Empregado("Jose Maria","Rua 1", "99 99999999", 4,2500f,2.5f);
+
+        System.out.println(novoEmpregado);
     }
 }

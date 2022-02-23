@@ -20,11 +20,13 @@ public class Vendedor extends Empregado{
         this.percentualComissao = percentualComissao;
     }
 
+    //sobrescrição do método calculaSalario adicionando atributos específicos da classe
     @Override
-    public float calculaSalario(float salarioBase, float imposto) {
-        return super.calculaSalario(salarioBase, imposto) + ((getValorVendas() * getPercentualComissao()) / 100);
+    public float calculaSalario(float salarioBase, float imposto, int codigoSetor) {
+        return super.calculaSalario(salarioBase, imposto,codigoSetor) + ((getValorVendas() * getPercentualComissao()) / 100);
     }
 
+    //sobrescrição do método toString(), incluindo os dados desejados na impressão
     @Override
     public String toString() {
         return "Dados do Administrador:" +
@@ -33,6 +35,6 @@ public class Vendedor extends Empregado{
                 "\nTelefone: " + getTelefone() +
                 "\nCódigo Setor: " + getCodigoSetor() +
                 "\nSalário Bruto: " + valorNumerico.format(getSalarioBase()) +
-                "\nSalário Liquido: " + valorNumerico.format(calculaSalario(this.getSalarioBase(), this.getImposto()));
+                "\nSalário Liquido: " + valorNumerico.format(calculaSalario(this.getSalarioBase(), this.getImposto(),this.getCodigoSetor()));
     }
 }

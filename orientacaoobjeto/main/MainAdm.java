@@ -13,5 +13,9 @@ public class MainAdm {
         administrador.setImposto(7.5f);
         administrador.setAjudaDeCusto(2500f);
         System.out.println(administrador.toString());
+
+        Administrador novoAdministrador = new Administrador("João","Rua 3","11 23452345",2,5500f,7.5f,3000f);
+        System.out.println("\n" + novoAdministrador);
+
     }
 }

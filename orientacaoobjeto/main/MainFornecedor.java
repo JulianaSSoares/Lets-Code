@@ -10,6 +10,10 @@ public class MainFornecedor {
         fornecedor.setTelefone("11 22223333");
         fornecedor.setValorCredito(50000);
         fornecedor.setValorDivida(5000);
-        System.out.println(fornecedor.toString());
+        System.out.println(fornecedor);
+
+
+        Fornecedor novoFornecedor = new Fornecedor("Novo Fornecedor", "R XYZ", "00 11112222", 5000, 1000);
+        System.out.println("\n" + novoFornecedor);
     }
 }

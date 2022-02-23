@@ -13,6 +13,11 @@ public class Administrador extends Empregado{
 
     }
 
+    public Administrador(String nome, String endereco, String telefone, int codigoSetor, float salarioBase, float imposto, float ajudaDeCusto){
+        super(nome, endereco, telefone, codigoSetor, salarioBase, imposto);
+        this.ajudaDeCusto=ajudaDeCusto;
+    }
+
     public float getAjudaDeCusto() {
         return this.ajudaDeCusto;
     }
@@ -21,11 +26,13 @@ public class Administrador extends Empregado{
         this.ajudaDeCusto = ajudaDeCusto;
     }
 
+    //sobrescrição do método calculaSalario adicionando um atributo específico da classe
     @Override
-    public float calculaSalario(float salarioBase, float imposto) {
-        return super.calculaSalario(salarioBase, imposto) + this.getAjudaDeCusto();
+    public float calculaSalario(float salarioBase, float imposto, int codSetor) {
+        return super.calculaSalario(salarioBase, imposto, codSetor) + this.getAjudaDeCusto();
     }
 
+    //sobrescrição do método toString(), incluindo os dados desejados na impressão
     @Override
     public String toString() {
         return "Dados do Administrador:" +
@@ -35,6 +42,6 @@ public class Administrador extends Empregado{
                 "\nCódigo Setor: " + getCodigoSetor() +
                 "\nSalário Bruto: " + valorNumerico.format(getSalarioBase()) +
                 "\nAjuda de Custo: " + valorNumerico.format(getAjudaDeCusto())+
-                "\nSalário Liquido: " + valorNumerico.format(calculaSalario(this.getSalarioBase(), this.getImposto()));
+                "\nSalário Liquido: " + valorNumerico.format(calculaSalario(this.getSalarioBase(), this.getImposto(),this.getCodigoSetor()));
     }
 }
